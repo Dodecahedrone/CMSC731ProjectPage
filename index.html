@@ -178,8 +178,11 @@
         <h3 class="title is-4">Rendering Table tennis on Meta Quest 3</h3>
         <div class="content has-text-justified">
           <p>
-            When designing the table tennis part of our experiment, we modified code from a <a href="https://github.com/tomgoddard/PingPang">public ping pong repository</a>. Here, we added options to control the C/D ratio of the table tennis racket. One problem we encountered was that there were multiple movements we could apply the ratio too. For example, we first tried applying the C/D ratio to the translation of the paddle in the virtual environment, but this created a very unnatural effect when playing the game. Additionally, we could have also applied the ratio to the rotation of the wrist too. In the end, to solve the problem, we applied the C/D ratio to the rotation of the user’s entire arm instead of just the wrist, since table tennis mostly involves a swinging motion of the arm to hit the ball. Moreover, we also had to edit the code of the AI table tennis racket to always shoot towards the user’s right hand, allowing them to make the same motion to hit the ball. Some videos of the table tennis game and the C/D ratios are presented below for reference. 
-          </p>
+            When designing the table tennis part of our experiment, we modified code from a <a href="https://github.com/tomgoddard/PingPang">public ping pong repository</a>. Here, we added options to control the C/D ratio of the table tennis racket. One problem we encountered was that there were multiple movements we could apply the ratio too. For example, we first tried applying the C/D ratio to the translation of the paddle in the virtual environment, but this created a very unnatural effect when playing the game. Additionally, we could have also applied the ratio to the rotation of the wrist too. Besides, In this fast-paced environment, a standard one-to-one mapping between the controller and the virtual paddle is no longer sufficient if we want to induce a convincing illusion of weight. Therefore, we needed a robust motion re-mapping strategy, which brings us to the geometric setup of our system.
+          <p>
+            We introduce our Motion Re-mapping Strategy. Traditionally, VR systems track the absolute position—the X, Y, Z coordinates—of the controller. However, under standard linear scaling, applying a C/D ratio often causes the virtual object to drift or feel disconnected from the physical hand during rapid movements.
+          <p>  
+            To solve this, we shifted our mapping strategy from absolute position to relative angular mapping. We define the user’s shoulder as the origin of a spherical coordinate system. We then track the arm vector and decompose the hand's motion into two components: Angle and Length. By keeping the arm length matching the physical world one-to-one, we only manipulate the angular displacement to achieve a more natural hand-to-paddle coordination."
         </div>
         <div class="content has-text-centered">
           <video id="replay-video"
@@ -207,7 +210,7 @@
             In order to conduct our user study, we broke it down into two sessions: free exploration and weight discrimination. 
           </p>
           <p>
-            For the first session, we had the users freely play around with ping-pong paddles of different weights for a few minutes (e.g. 1.0 and 1.15). For this stage and the next, the ping-pong paddles had the same mesh and texture to prevent any possible external influence on weight perception due to visuals. After the free exploration session, the users took a short break to fill out a likert-scale (from strongly disagree to strongly agree) questionnaire on how they perceived the weight. Here, we broke down the questionnaire into the following categories: perception of weight, limb ownership, and object believability. 
+            For the first session, we had the users freely play around with ping-pong paddles of different weights for a few minutes (C/D ratio: 0.85 & 1.15). For this stage and the next, the ping-pong paddles had the same mesh and texture to prevent any possible external influence on weight perception due to visuals. After the free exploration session, the users took a short break to fill out a likert-scale (from strongly disagree to strongly agree) questionnaire on how they perceived the weight. Here, we broke down the questionnaire into the following categories: perception of weight, limb ownership, and object believability. 
           </p>
           <p>
             In the second session, we carried out a weight discrimination test using A/B testing where the user was asked to distinguish the weight between two ping pong paddles of different C/D ratios. One of the paddles always had a standard ratio of 1, while the other had a varied ratio of either 0.7, 0.8, 0.9, 1.1, 1.2, or 1.3. Each of these 6 settings was tested 4 times, but we scrambled the order to prevent any noticeable pattern which the user could guess. Additionally, we counter-balanced which paddle was assigned a C/D ratio of 1 to ensure there was an equal proportion of trials where the user was given the fixed or varied ratio paddle first. After swinging the paddles, the user was asked which one they felt was heavier. The proportion of whether the user said the varied ratio was heavier was recorded.
@@ -223,14 +226,14 @@
 
 
         <!--/ Re-rendering. -->
-        <h3 class="title is-4">IRB approval and data collection.</h3>
+        <!-- <h3 class="title is-4">IRB approval and data collection.</h3>
         <div class="content has-text-justified">
           <p>
             We have submitted the IRB application to the university and are currently awaiting approval. In the meantime, we have begun recruiting volunteers for our survey and have enrolled 12 undergraduate students and 8 graduate students to date.
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Animation. -->
 
 

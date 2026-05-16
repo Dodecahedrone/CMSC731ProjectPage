@@ -202,9 +202,30 @@
           <p>  
             To solve this, we shifted our mapping strategy from absolute position to relative angular mapping. We define the user’s shoulder as the origin of a spherical coordinate system. We then track the arm vector and decompose the hand's motion into two components: Angle and Length. By keeping the arm length matching the physical world one-to-one, we only manipulate the angular displacement to achieve a more natural hand-to-paddle coordination."
           </p>
+          <p>
+            Besides, A critical challenge we faced was the 'centerline acceleration phenom.' If we scale the motion around the user's front center, the paddle exhibits an unnatural 'magnetic acceleration' when crossing the centerline, leading to a sudden distortion in weight perception. Our solution, as shown in the next image, is the 'Right 90-degree' Anchor Logic. For a right-handed forehand stroke, the movement is inherently unidirectional—moving from the right side toward the front. Therefore, we redefined the 'Zero-Angle Basis' at 90 degrees to the user's right. At this precise anchor point, the angular delta is zero, meaning the physical hand and the virtual paddle are perfectly aligned without any offset. This effectively eliminates any position snapping or reverse acceleration.
+          </p>
         </div>
 
-        
+        <div class="content has-text-centered">
+          <img src="./static/images/90 degree anchor.png"
+               alt="Set up for VR TT"
+               style="max-width: 75%;">
+          <p>Shoulder spherical coordinate system and the "Right 90" anchor logic</p>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            Finally, we apply Real-time Angular Scaling. Instead of standard vector interpolation, we use angular extrapolation by multiplying the measured angle 𝛳 by a coefficient, k, which represents our C/D ratio. This method is mathematically similar to rotation gains used in Redirected Walking. It ensures that the paddle smoothly leads or lags the hand with a constant geometric scaling factor throughout the entire swing, creating a seamless and consistent illusion of weight during intense sports-like actions. Next, my teammate will introduce the VR baseball environment.
+          </p>
+        </div>
+
+         <div class="content has-text-centered">
+          <img src="./static/images/cd charts.png"
+               alt="cd ratio"
+               style="max-width: 75%;">
+          <p>Real-time Angular Scaling Setup Illustration</p>
+        </div>
         
         <div class="content has-text-centered">
           <video id="replay-video"

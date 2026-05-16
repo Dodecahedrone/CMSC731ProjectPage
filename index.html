@@ -176,14 +176,6 @@
 
         <!-- Re-rendering. -->
         <h3 class="title is-4">Rendering Table tennis on Meta Quest 3</h3>
-        <div class="content has-text-justified">
-          <p>
-            When designing the table tennis part of our experiment, we modified code from a <a href="https://github.com/tomgoddard/PingPang">public ping pong repository</a>. Here, we added options to control the C/D ratio of the table tennis racket. One problem we encountered was that there were multiple movements we could apply the ratio too. For example, we first tried applying the C/D ratio to the translation of the paddle in the virtual environment, but this created a very unnatural effect when playing the game. Additionally, we could have also applied the ratio to the rotation of the wrist too. Besides, In this fast-paced environment, a standard one-to-one mapping between the controller and the virtual paddle is no longer sufficient if we want to induce a convincing illusion of weight. Therefore, we needed a robust motion re-mapping strategy, which brings us to the geometric setup of our system.
-          <p>
-            We introduce our Motion Re-mapping Strategy. Traditionally, VR systems track the absolute position—the X, Y, Z coordinates—of the controller. However, under standard linear scaling, applying a C/D ratio often causes the virtual object to drift or feel disconnected from the physical hand during rapid movements.
-          <p>  
-            To solve this, we shifted our mapping strategy from absolute position to relative angular mapping. We define the user’s shoulder as the origin of a spherical coordinate system. We then track the arm vector and decompose the hand's motion into two components: Angle and Length. By keeping the arm length matching the physical world one-to-one, we only manipulate the angular displacement to achieve a more natural hand-to-paddle coordination."
-        </div>
         <div class="content has-text-centered">
           <video id="replay-video"
                  controls
@@ -194,7 +186,28 @@
             <source src="./static/videos/TT.mp4"
                     type="video/mp4">
           </video>
+          <p>
+            Table tennis VR game
+          </p>
+          <p>
+            When designing the table tennis part of our experiment, we modified code from a <a href="https://github.com/tomgoddard/PingPang">public ping pong repository</a>. Here, we added options to control the C/D ratio of the table tennis racket. 
+          </p>
+        </div>
+        
+        <div class="content has-text-justified">
+          <p>
+            In this fast-paced environment, a standard one-to-one mapping between the controller and the virtual paddle is no longer sufficient if we want to induce a convincing illusion of weight. Therefore, we needed a robust motion re-mapping strategy, which brings us to the geometric setup of our system.
+            We introduce our Motion Re-mapping Strategy. Traditionally, VR systems track the absolute position—the X, Y, Z coordinates—of the controller. However, under standard linear scaling, applying a C/D ratio often causes the virtual object to drift or feel disconnected from the physical hand during rapid movements.
+          </p>
+          <p>  
+            To solve this, we shifted our mapping strategy from absolute position to relative angular mapping. We define the user’s shoulder as the origin of a spherical coordinate system. We then track the arm vector and decompose the hand's motion into two components: Angle and Length. By keeping the arm length matching the physical world one-to-one, we only manipulate the angular displacement to achieve a more natural hand-to-paddle coordination."
+          </p>
+        </div>
 
+
+
+        
+        <div>
           <video id="replay-video"
                  controls
                  muted

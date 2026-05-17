@@ -156,14 +156,34 @@
         <h3 class="title is-4">Rendering Baseball on Meta Quest 3</h3>
         <div class="content has-text-justified">
           <p>
-            We are almost finished with rendering of Baseball sport with bats of different weights on Meta Quest 3. The scene includes a virtual pitching machine, and the ball is pitched upon user request by pressing X on the controller. The video below shows gameplay with the lightest bat setting while hitting balls in the virtual environment we created. Some images and videos are presented below for reference. We plan to start the survey within 1-2 days.
+            We developed a VR Baseball environment on the Meta Quest 3 to test the illusion of weight using different bat settings. The scene includes a virtual pitching machine, and the ball is pitched upon user request by pressing X on the controller. Below are the environment scenes and a demo video showing the gameplay using the lightest bat setting.
           </p>
+          <p>
+            While developing the baseball simulation, we encountered several unique challenges:
+          </p>
+          <ul>
+            <li><strong>Orientation Mapping:</strong> Finding the correct orientation mapping between the physical environment controller and the virtual baseball bat was tricky. We added a 90-degree offset to ensure the virtual bat oriented naturally with the user's batting stance.</li>
+            <li><strong>Grip Location Adjustment:</strong> Every user required and felt a different ideal grip location. To accommodate this, we added a feature allowing users to dynamically adjust the grip location in the X and Y directions using the right-hand controller.</li>
+            <li><strong>Swing Speed Calculation:</strong> There was no automatic way to calculate the swing speed at the exact moment of impact. Because the kinematic plugin being checked causes the instantaneous velocity to register as 0 upon contact, we had to approximate the impact speed using the predicted motion trajectories of both the bat and the ball.</li>
+          </ul>
         </div>
         <div class="content has-text-centered">
-          <img src="./static/images/baseball_bats.png"
-               alt="Baseball bats in virtual world with different perceptive weights."
+          <img src="./static/images/Screenshot%202026-05-16%20092615.png"
+               alt="pitching machine releases a parabolic trajectory ball"
                style="max-width: 75%;">
-          <p>baseball bats in Virtual world with different perceptive weights (with C/D ratio manipulation)</p>
+          <p>pitching machine releases a parabolic trajectory ball</p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/Screenshot%202026-05-16%20094931.png"
+               alt="overall scene with brown terrain, nets, tress, sky ,etc for immersion."
+               style="max-width: 75%;">
+          <p>overall scene with brown terrain, nets, tress, sky ,etc for immersion.</p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/CD%20-%200.8%20(2).png"
+               alt="A baseball bat stand with 6 bats - all with different C / D ratios to test different perceptive weights."
+               style="max-width: 75%;">
+          <p>A baseball bat stand with 6 bats - all with different C / D ratios to test different perceptive weights.</p>
         </div>
         <div class="content has-text-centered">
           <video controls muted preload playsinline width="75%">

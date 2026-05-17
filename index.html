@@ -216,7 +216,7 @@
 
         <div class="content has-text-justified">
           <p>
-            Finally, we apply Real-time Angular Scaling. Instead of standard vector interpolation, we use angular extrapolation by multiplying the measured angle 𝛳 by a coefficient, k, which represents our C/D ratio. This method is mathematically similar to rotation gains used in Redirected Walking. It ensures that the paddle smoothly leads or lags the hand with a constant geometric scaling factor throughout the entire swing, creating a seamless and consistent illusion of weight during intense sports-like actions. Next, my teammate will introduce the VR baseball environment.
+            Finally, we apply Real-time Angular Scaling. Instead of standard vector interpolation, we use angular extrapolation by multiplying the measured angle 𝛳 by a coefficient, k, which represents our C/D ratio. This method is mathematically similar to rotation gains used in Redirected Walking. It ensures that the paddle smoothly leads or lags the hand with a constant geometric scaling factor throughout the entire swing, creating a seamless and consistent illusion of weight during intense sports-like actions.
           </p>
         </div>
 
@@ -241,24 +241,39 @@
             C/D Ratio Demonstration
           </p>
         </div>
-        
+
+        <h3 class="title is-4">User Study Design and Data Analysis</h3>
         <div class="content has-text-justified">
           <p>
             In order to conduct our user study, we broke it down into two sessions: free exploration and weight discrimination. 
           </p>
           <p>
-            For the first session, we had the users freely play around with ping-pong paddles of different weights for a few minutes (C/D ratio: 0.85 & 1.15). For this stage and the next, the ping-pong paddles had the same mesh and texture to prevent any possible external influence on weight perception due to visuals. After the free exploration session, the users took a short break to fill out a likert-scale (from strongly disagree to strongly agree) questionnaire on how they perceived the weight. Here, we broke down the questionnaire into the following categories: perception of weight, limb ownership, and object believability. 
+            For the first session, we had the users freely play around with paddles of different weights for a few minutes (C/D ratio: 0.85 & 1.15). For this stage and the next, the paddles had the same mesh and texture to prevent any possible external influence on weight perception due to visuals. After the free exploration session, the users took a short break to fill out a likert-scale (from strongly disagree<1> to strongly agree<7>) questionnaire on how they perceived the weight. Here, we broke down the questionnaire into the following categories: perception of weight, limb ownership, and object believability.  
           </p>
           <p>
-            In the second session, we carried out a weight discrimination test using A/B testing where the user was asked to distinguish the weight between two ping pong paddles of different C/D ratios. One of the paddles always had a standard ratio of 1, while the other had a varied ratio of either 0.7, 0.8, 0.9, 1.1, 1.2, or 1.3. Each of these 6 settings was tested 4 times, but we scrambled the order to prevent any noticeable pattern which the user could guess. Additionally, we counter-balanced which paddle was assigned a C/D ratio of 1 to ensure there was an equal proportion of trials where the user was given the fixed or varied ratio paddle first. After swinging the paddles, the user was asked which one they felt was heavier. The proportion of whether the user said the varied ratio was heavier was recorded.
+            In the second session, we carried out a weight discrimination test using A/B testing where the user was asked to distinguish the weight between two paddles of different C/D ratios. One of the paddles always had a standard ratio of 1, while the other had a varied ratio of either 0.7, 0.8, 0.9, 1.1, 1.2, or 1.3. Each of these 6 settings was tested 4 times, but we scrambled the order to prevent any noticeable pattern which the user could guess. Additionally, we counter-balanced which paddle was assigned a C/D ratio of 1 to ensure there was an equal proportion of trials where the user was given the fixed or varied ratio paddle first. After swinging the paddles, the user was asked which one they felt was heavier. The proportion of whether the user said the varied ratio was heavier was recorded. For detailed procedures and questionnaire design, please refer to this <a href="https://docs.google.com/document/d/1zcLIQUonyhuGWRqHIE0BpudeSac8BoC_Zxb5NsEpEVg/edit?tab=t.0">document</a>.
           </p>
 
           <p>
-            To analyze the questionnaire, we mapped each likert-scale response from 0 to 1 (0 = strongly disagree, 0.5 = neutral, 1 = strongly agree). After aggregating the responses, they were then analyzed by using a Wilcoxon signed-rank test to test whether the median differed significantly from 0.5. The results are displayed in the box plot, where the asterisk indicates items that were found to be significantly different from 0.5. Out of our 9 questions, only 4 were found to be significantly different. Here, users did perceive a weight difference, but there were no significant changes in exerting physical effort or perception of material. However, it seemed like the users still retained the feelings of limb ownership, and they also felt that the interaction with the paddles was natural.
+            To analyze the questionnaire, we mapped each likert-scale response from 0 to 1 (0 = strongly disagree, 0.5 = neutral, 1 = strongly agree). After aggregating the responses, they were then analyzed by using a Wilcoxon signed-rank test to test whether the median differed significantly from 0.5. The results are displayed in the box plot, where the asterisk indicates items that were found to be significantly different from 0.5. Out of our 9 questions, only 4 were found to be significantly different in the Table tennis game study. Here, users did perceive a weight difference, but there were no significant changes in exerting physical effort or perception of material. However, it seemed like the users still retained the feelings of limb ownership, and they also felt that the interaction with the paddles was natural.
           </p>
           <p>
-            For the weight discrimination test, the data was analyzed to reflect the proportion of trials for which the comparison stimulus was reported to be heavier than the standard 1.0 stimulus as a function of the C/D ratio of the comparison stimulus. Based on the resulting graph, the slope was negative and significantly greater than 0. It seems like users perceived lower CD ratios as heavier, while higher CD ratios were perceived as lighter. 
+            For the weight discrimination test, the data was analyzed to reflect the proportion of trials for which the comparison stimulus was reported to be heavier than the standard 1.0 stimulus as a function of the C/D ratio of the comparison stimulus. Based on the resulting graph, the slope was negative and significantly greater than 0. It seems like users perceived higher CD ratios as heavier, while lower CD ratios were perceived as lighter. 
           </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/Wx.png"
+               alt="Wx"
+               style="max-width: 75%;">
+          <p>Responses to Questionnaire. Asterisks indicate median is significantly diferent from 0.5 according to the Wilcoxon signed-rank test, and plus signs represent outliers.</p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/2-al.png"
+               alt="2-al"
+               style="max-width: 75%;">
+          <p>Psychometric function showing the probability of reporting that the comparison cube felt heavier than the standard cube (C/D ratio = 1) as a function of the C/D ratio. The plotted lines are the ftted psychometric function.</p>
         </div>
 
 
